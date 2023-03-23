@@ -7,13 +7,13 @@ namespace _2011062999_DuongNguyenSongPhi.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddNameColumnToApplicationUser : IMigrationMetadata
+    public sealed partial class AddFollowingsTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddNameColumnToApplicationUser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFollowingsTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202303160348161_AddNameColumnToApplicationUser"; }
+            get { return "202303230338126_AddFollowingsTable"; }
         }
         
         string IMigrationMetadata.Source
