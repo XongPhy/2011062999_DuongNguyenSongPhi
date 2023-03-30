@@ -1,41 +1,44 @@
 ﻿@model _2011062999_DuongNguyenSongPhi.ViewModels.CourseViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>Attending</h2>
 
 <ul class="course">
     @foreach (var course in Model.UpcommingCourses)
-            {
-                <li>
-                    <div class="date">
-                        <div class="month">
-                            @course.Datetime.ToString("MM")
-                        </div>
-                        <div class="day">
-                            @course.Datetime.ToString("dd")
-                        </div>
-                    </div>
-                    <div class="details">
-                        <span class="lecturer">
-                            @course.Lecturer.Name
-                            @if (Model.ShowAction)
-                            {
-                                <button class="btn btn-link btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
-                            }
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @course.Datetime.ToString("MM")
+                </div>
+                <div class="day">
+                    @course.Datetime.ToString("dd")
+                </div>
+            </div>
+            <div class="details">
+                <span class="lecturer">
+                    @course.Lecturer.Name
+                    @if (Model.ShowAction)
+                    {
+                        <button class="btn btn-link btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
+                    }
 
-                        </span>
-                        <span class="category">
-                            @course.Category.Name
+                </span>
+                <span class="category">
+                    @course.Category.Name
 
-                        </span>
-                        @if (Model.ShowAction)
-                        {
-                            <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
-                        }
+                </span>
+                @if (Model.ShowAction)
+                {
+                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                }
 
-                    </div>
-                </li>
-            }
+            </div>
+        </li>
+    }
 </ul>
 @section scripts
 {
@@ -67,3 +70,4 @@
         });
     </script>
 }
+

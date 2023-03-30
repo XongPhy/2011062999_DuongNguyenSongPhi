@@ -10,6 +10,7 @@ namespace _2011062999_DuongNguyenSongPhi.ViewModels
 {
     public class CourseViewModel
     {
+        public int Id { get; set; }
         [Required]
         public string Place { get; set; }
         [Required]
@@ -20,6 +21,11 @@ namespace _2011062999_DuongNguyenSongPhi.ViewModels
         public string Time { get; set; }
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
+        public string Heading { get; set; }
+        public string Action
+        {
+            get { return (Id != 0) ? "Update" : "Create"; }
+        }
         public DateTime GetDateTime()
         {
             DateTime result;
@@ -33,5 +39,7 @@ namespace _2011062999_DuongNguyenSongPhi.ViewModels
                 return DateTime.MinValue; // hoặc trả về giá trị mặc định khác tùy thuộc vào yêu cầu của bạn
             }
         }
+        public IEnumerable<Course> UpcommingCourses { get; set; }
+        public bool ShowAction { get; set; }
     }
 }
